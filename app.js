@@ -8,13 +8,11 @@ const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const { checkForAuthenticationCookie } = require('./middlewares/authentication');
 const mongoString = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/blogify";
-async function connectDatabase(){
-    await mongoose.connect(mongoString);
-    mongoose.connection.once("open",() => {
-        console.log("Database connected Successfully");
-    });
-};
-connectDatabase();
+
+mongoose.connect(mongoString);
+mongoose.connection.once("open",() => {
+    console.log("Database connected Successfully");
+});
 
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog");
