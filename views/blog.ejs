@@ -19,6 +19,9 @@
     </div>
 
     <div class="container mt-3">
+      <% if (!locals.user) { %>
+       <p>Login to comment!</p>
+      <% } %>
         <h1>Comments (<%= comments.length %>)</h1>
         <% if (locals.user) { %>
             <form action="/blog/comment/<%= blog._id %>" method="POST">
@@ -38,7 +41,7 @@
                  </div>
                 <% }) %>
               </div>
-        </div
+    </div>
     <%- include('./partials/scripts') %>
 </body>
 </html>
