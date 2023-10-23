@@ -23,12 +23,14 @@ router.post("/signin",async (req,res) => {
 });
 router.post("/signup",async (req,res) => {
     const {fullName, email, password} = req.body;
-    await User.create({
+    const user = await User.findOne({email});
+    // console.log(user);
+    if(user) return res.render("signup",{error: "User already exists"});
+    const newUser = await User.create({
         fullName,
         email,
         password,
     });
-
     return res.redirect("/");
 });
 router.get('/logout',(req,res) => {

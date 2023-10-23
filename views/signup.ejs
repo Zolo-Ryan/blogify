@@ -9,7 +9,7 @@
   <body>
     <%- include('./partials/nav') %>
 
-    <div class="container mt-5">
+    <div class="container mt-5" style="height: 100vh;">
       <form action="/user/signup" method="POST">
         <div class="mb-3">
           <label for="fullName" class="form-label"
@@ -21,6 +21,7 @@
             name="fullName"
             id="fullName"
             aria-describedby="fullName"
+            required
           />
         </div>
         <div class="mb-3">
@@ -33,6 +34,7 @@
             id="exampleInputEmail1"
             name="email"
             aria-describedby="emailHelp"
+            required
           />
           <div id="emailHelp" class="form-text">
             We'll never share your email with anyone else.
@@ -45,6 +47,7 @@
             name="password"
             class="form-control"
             id="password"
+            required
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -52,5 +55,6 @@
     </div>
 
     <%- include('./partials/scripts') %>
+    <%- include('./partials/footer') %>
   </body>
 </html>
