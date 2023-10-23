@@ -9,9 +9,9 @@
   <body>
     <%- include('./partials/nav') %>
     <div class="container mt-3">
-    <div class="row row-cols-4">
+    <div style="display: flex; flex-direction: row; flex-wrap:wrap; justify-content: center; gap: 0 30px">
       <% blogs.forEach(blog => { %>
-        <div class="col">
+        <div class="mt-2">
             <div class="card" style="width: 18rem">
                 <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="loading..." style="height: 200px;" />
                 <div class="card-body">
