@@ -8,25 +8,36 @@
   </head>
   <body>
     <%- include('./partials/nav') %>
-    <div class="container mt-3">
-    <div style="display: flex; flex-direction: row; flex-wrap:wrap; justify-content: center; gap: 0 30px">
-      <% blogs.forEach(blog => { %>
+    <div class="container mt-3" style="min-height: 100vh;">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0 30px;
+          min-height: 100vh;
+        "
+      >
+        <% blogs.forEach(blog => { %>
         <div class="mt-2">
-            <div class="card" style="width: 18rem">
-                <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="loading..." style="height: 200px;" />
-                <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <p class="card-text">
-                    
-                  </p>
-                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem">
+            <img
+              src="<%= blog.coverImageURL %>"
+              class="card-img-top"
+              alt="loading..."
+              style="height: 200px"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <p class="card-text"></p>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+            </div>
+          </div>
         </div>
-      <% }) %>
+        <% }) %>
+      </div>
     </div>
-    </div>
-    <%- include('./partials/scripts') %>
-    <%- include('./partials/footer') %>
+    <%- include('./partials/scripts') %> <%- include('./partials/footer') %>
   </body>
 </html>
